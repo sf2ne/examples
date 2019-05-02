@@ -1,0 +1,24 @@
+{
+  "org": "$HZN_ORG_ID",
+  "label": "GPS for $ARCH",
+  "description": "Provides the edge node location via a REST API from a GPS sensor, environment variables, or the IP address",
+  "public": true,
+  "documentation": "https://console.test.cloud.ibm.com/docs/services/edge-fabric/poc/cpu.html",
+  "url": "$MYDOMAIN.$GPS_NAME",
+  "version": "$GPS_VERSION",
+  "arch": "$ARCH",
+  "sharable": "singleton",
+  "requiredServices": [],
+  "userInput": [],
+  "deployment": {
+    "services": {
+      "gps": {
+        "image": "$DOCKER_HUB_ID/${ARCH}_$GPS_NAME:$GPS_VERSION",
+        "privileged": true,
+        "devices": [
+          "/dev/bus/usb/001/001:/dev/bus/usb/001/001"
+        ]
+      }
+    }
+  }
+}
