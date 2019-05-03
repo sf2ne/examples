@@ -1,0 +1,17 @@
+{
+  "label": "Edge $MONITOR_NAME Service Pattern for $ARCH",
+  "description": "Pattern for $MONITOR_NAME pinging to motion service for motion and then calling the camera service to send an image to IBM Event Streams",
+  "public": true,
+  "services": [
+    {
+      "serviceUrl": "$MONITOR_NAME",
+      "serviceOrgid": "${HZN_ORG_ID}",
+      "serviceArch": "arm",
+      "serviceVersions": [
+        {
+          "version": "$MONITOR_VERSION"
+        }
+      ]
+    }
+  ]
+}
