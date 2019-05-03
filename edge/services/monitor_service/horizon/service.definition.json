@@ -13,7 +13,7 @@
   "deployment": {
     "services": {
       "gps": {
-        "image": "$DOCKER_HUB_ID/${ARCH}_$MONITOR_NAME:MONITOR_VERSION",
+        "image": "$DOCKER_HUB_ID/$MONITOR_NAME:MONITOR_VERSION",
         "privileged": true,
 
       }

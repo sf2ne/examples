@@ -32,9 +32,9 @@ def take_picture(n):
 	return filepath
 
 
-def take_video():
+def take_video(n):
 	try:
-		filepath = '/video_'+str(COUNT)+'.h264'
+		filepath = '/video_'+str(n)+'.h264'
 	except:
 		pass
 	camera.start_recording(filepath)
