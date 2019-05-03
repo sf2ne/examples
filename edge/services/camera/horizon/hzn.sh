@@ -7,10 +7,10 @@
 HZN_ORG_ID=Sadiyah.Faruk@ibm.com
 
 # An identifier for your service that is unique in your org
-SERVICE_NAME=camera
+CAMERA_NAME=camera
 
 # The current version of your service you are building/publishing
-SERVICE_VERSION=0.0.1
+CAMERA_VERSION=0.0.1
 
 # Change openhorizon to your docker hub id from https://hub.docker.com/ .
 # ARCH and SERVICE_VERSION will be added to this when used.
@@ -19,8 +19,8 @@ ARCH=arm
 
 # Where to store your service signing keys. Only need to change these if you want to store them somewhere else.
 # Note: the horizon/keys sub-directory is in .gitignore so it will not be committed to git
-HZN_PRIVATE_KEY_FILE=horizon/keys/service.private.key
-HZN_PUBLIC_KEY_FILE=horizon/keys/service.public.pem
+HZN_PRIVATE_KEY_FILE=~/*-private.key
+HZN_PUBLIC_KEY_FILE=~/*-public.pem
 
 
 # Soon this will not be needed
