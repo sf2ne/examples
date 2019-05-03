@@ -1,23 +1,26 @@
 {
   "org": "$HZN_ORG_ID",
-  "label": "GPS for $ARCH",
-  "description": "Provides the edge node location via a REST API from a GPS sensor, environment variables, or the IP address",
+  "label": "Camera for $ARCH",
+  "description": "Exposes a REST API endpoint to take a picture on a RaspberryPi camera using PiCamera.",
   "public": true,
-  "documentation": "https://console.test.cloud.ibm.com/docs/services/edge-fabric/poc/cpu.html",
-  "url": "$MYDOMAIN.$GPS_NAME",
-  "version": "$GPS_VERSION",
+  "documentation": "",
+  "url": "$CAMERA_NAME",
+  "version": "$CAMERA_VERSION",
   "arch": "$ARCH",
-  "sharable": "singleton",
+  "sharable": "exclusive",
   "requiredServices": [],
   "userInput": [],
   "deployment": {
     "services": {
       "gps": {
-        "image": "$DOCKER_HUB_ID/${ARCH}_$GPS_NAME:$GPS_VERSION",
+        "image": "$DOCKER_HUB_ID/$CAMERA_NAME:$CAMERA_VERSION",
         "privileged": true,
-        "devices": [
-          "/dev/bus/usb/001/001:/dev/bus/usb/001/001"
-        ]
+        "ports": [
+                    {
+                        "HostPort": "8081:80/tcp",
+                        "HostIP": "0.0.0.0"
+                    }
+                ]
       }
     }
   }
