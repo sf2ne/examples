@@ -1,0 +1,30 @@
+{
+    "org": "$HZN_ORG_ID",
+    "label": "Motion sensor for $ARCH",
+    "description": "Exposes a REST API endpoint to check if a motion sensor has registered motion.",
+    "public": true,
+    "documentation": "",
+    "url": "$MOTION_NAME",
+    "version": "$MOTION_VERSION",
+    "arch": "$ARCH",
+    "sharable": "exclusive",
+    "matchHardware": null,
+    "requiredServices": [],
+    "userInput": [],
+    "deployment": {
+        "services": {
+            "motion": {
+                "image": "$DOCKER_HUB_ID/$MOTION_NAME:$MOTION_VERSION",
+                "ports": [
+                    {
+                        "HostIP": "0.0.0.0",
+                        "HostPort": "8080:80/tcp"
+                    }
+                ],
+                "privileged": true
+            }
+        }
+    },
+    "deploymentSignature": "",
+    "imageStore": null
+}

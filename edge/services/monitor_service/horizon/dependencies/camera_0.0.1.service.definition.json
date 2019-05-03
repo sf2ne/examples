@@ -1,0 +1,30 @@
+{
+    "org": "$HZN_ORG_ID",
+    "label": "Camera for $ARCH",
+    "description": "Exposes a REST API endpoint to take a picture on a RaspberryPi camera using PiCamera.",
+    "public": true,
+    "documentation": "",
+    "url": "$CAMERA_NAME",
+    "version": "$CAMERA_VERSION",
+    "arch": "$ARCH",
+    "sharable": "exclusive",
+    "matchHardware": null,
+    "requiredServices": [],
+    "userInput": [],
+    "deployment": {
+        "services": {
+            "camera": {
+                "image": "$DOCKER_HUB_ID/$CAMERA_NAME:$CAMERA_VERSION",
+                "ports": [
+                    {
+                        "HostIP": "0.0.0.0",
+                        "HostPort": "8081:80/tcp"
+                    }
+                ],
+                "privileged": true
+            }
+        }
+    },
+    "deploymentSignature": "",
+    "imageStore": null
+}

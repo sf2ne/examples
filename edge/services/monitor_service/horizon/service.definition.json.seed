@@ -1,0 +1,22 @@
+{
+  "org": "$HZN_ORG_ID",
+  "label": "Monitor Service for $ARCH",
+  "description": "Polls the motion sensor for movement and then gets a picture from the camera sensor.",
+  "public": true,
+  "documentation": "",
+  "url": "$MONITOR_NAME",
+  "version": "$MONITOR_VERSION",
+  "arch": "$ARCH",
+  "sharable": "singleton",
+  "requiredServices": [],
+  "userInput": [],
+  "deployment": {
+    "services": {
+      "monitor": {
+        "image": "$DOCKER_HUB_ID/${ARCH}_$MONITOR_NAME:$MONITOR_VERSION",
+        "privileged": true
+
+      }
+    }
+  }
+}
