@@ -7,7 +7,7 @@
 HZN_ORG_ID=Sadiyah.Faruk@ibm.com
 
 # An identifier for your service that is unique in your org
-SERVICE_NAME=camera
+SERVICE_NAME=motion
 
 # The current version of your service you are building/publishing
 SERVICE_VERSION=0.0.1
