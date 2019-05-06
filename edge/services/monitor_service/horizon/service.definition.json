@@ -23,7 +23,26 @@
             "arch": "$ARCH"
         }
     ],
-    "userInput": [],
+    "userInput": [
+        {
+            "name": "MSGHUB_API_KEY",
+            "label": "The API key to use when sending images to your instance of IBM Event Streams",
+            "type": "string",
+            "defaultValue": ""
+        },
+        {
+            "name": "MSGHUB_BROKER_URL",
+            "label": "The broker url to use when sending images to your instance of IBM Event Stream",
+            "type": "string",
+            "defaultValue": ""
+        },
+        {
+            "name": "MSGHUB_TOPIC",
+            "label": "The topic to use when sending images to your instance of IBM Event Stream",
+            "type": "string",
+            "defaultValue": ""
+        }
+    ],
     "deployment": {
         "services": {
             "monitor": {

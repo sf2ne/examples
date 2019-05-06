@@ -1,3 +1,3 @@
 sudo docker build -f Dockerfile -t monitor:latest .
 sudo docker rm -f monitor 2>/dev/null || :
-sudo docker run -d --privileged --name monitor --network=mynet monitor:latest
+sudo docker run -d --privileged -e MSGHUB_BROKER_URL='kafka04-prod02.messagehub.services.us-south.bluemix.net:9093,kafka02-prod02.messagehub.services.us-south.bluemix.net:9093,kafka01-prod02.messagehub.services.us-south.bluemix.net:9093,kafka05-prod02.messagehub.services.us-south.bluemix.net:9093,kafka03-prod02.messagehub.services.us-south.bluemix.net:9093' -e MSGHUB_API_KEY='xvj55vVXrVIdYX1pCVPLOya2nTHNSEnF4BHLimq5wMPg4zvg' -e MSGHUB_TOPIC='Sadiyah.Faruk_ibm.com.IBM_cpu2msghub' --name monitor --network=mynet monitor:latest
