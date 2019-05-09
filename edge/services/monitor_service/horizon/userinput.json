@@ -4,7 +4,11 @@
             "org": "$HZN_ORG_ID",
             "url": "$MONITOR_NAME",
             "versionRange": "[0.0.0,INFINITY)",
-            "variables": {}
+            "variables": {
+                "MSGHUB_API_KEY": "$MSGHUB_API_KEY",
+                "MSGHUB_BROKER_URL": "$MSGHUB_BROKER_URL",
+                "MSGHUB_TOPIC": "$MSGHUB_TOPIC"
+                }
         },
         {
             "org": "$HZN_ORG_ID",
