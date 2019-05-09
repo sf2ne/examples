@@ -1,5 +1,5 @@
 import RPi.GPIO as GPIO
-from time import sleep
+import logging
 from flask import Flask,jsonify, request
 
 REST_API_BIND_ADDRESS = '0.0.0.0'
@@ -15,6 +15,7 @@ GPIO.setup(SENSOR_PIN, GPIO.IN)
 def ping_sensor_for_motion():
 	i = GPIO.input(SENSOR_PIN)
 	# is_motion = (i!=0)
+	logging.info("Ping for motion: " + i)
 	return jsonify({'motion': i}), 201
 
 

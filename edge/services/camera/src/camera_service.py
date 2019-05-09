@@ -1,8 +1,7 @@
 from picamera import PiCamera
-from os import abort
-from flask import Flask,jsonify, request
+from flask import Flask
 from time import sleep, time
-from sys import argv, exit
+import logging
 import base64
 
 REST_API_BIND_ADDRESS = '0.0.0.0'
@@ -19,6 +18,7 @@ def get_snippet():
 	with open(filepath, 'rb') as f:
 		contents = f.read()
 	image_64_encode = base64.encodestring(contents)
+	logging.info("snippet returned")
 	return image_64_encode, 201
 
 
@@ -29,6 +29,7 @@ def take_picture(n):
 		pass
 	camera.resolution = (1024, 768)
 	camera.capture(filepath)
+	logging.info("Image saved at " + filepath)
 	return filepath
 
 
@@ -40,6 +41,7 @@ def take_video(n):
 	camera.start_recording(filepath)
 	sleep(5)
 	camera.stop_recording()
+	logging.info("Video saved at " + filepath)
 	return filepath
 	
 
