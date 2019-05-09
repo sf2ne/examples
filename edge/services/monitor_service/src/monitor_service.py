@@ -4,14 +4,14 @@ import logging
 from time import sleep
 
 
-def send_to_kafka(image_path):
-	command = "./send_to_kafka.sh " + image_path
-	os.system(command)
-	logging.info("sending to kafka")
+#def send_to_kafka(image_path):
+#	command = "sh -c \"./send_to_kafka.sh " + image_path
+#	os.system(command)
+#	logging.info("sending to kafka")
 
 
 def get_image_and_send_to_kafka():
-	os.system("./send_to_kafka.sh")
+	os.system('sh -c "./send_to_kafka.sh"')
 	logging.info("sending to kafka")
 
 

@@ -28,6 +28,7 @@ def take_picture(n):
 	except:
 		pass
 	camera.resolution = (1024, 768)
+	camera.rotation = 180
 	camera.capture(filepath)
 	logging.info("Image saved at " + filepath)
 	return filepath

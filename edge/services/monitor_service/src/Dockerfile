@@ -10,7 +10,7 @@ RUN apt-get update \
 COPY monitor_service.py .
 COPY send_to_kafka.sh .
 
-RUN ["chmod", "+x", "send_to_kafka.sh"]
+RUN ["chmod", "777", "send_to_kafka.sh"]
 
 WORKDIR /
 

@@ -7,7 +7,7 @@
   "url": "$CAMERA_NAME",
   "version": "$CAMERA_VERSION",
   "arch": "$ARCH",
-  "sharable": "exclusive",
+  "sharable": "singleton",
   "requiredServices": [],
   "userInput": [],
   "deployment": {
