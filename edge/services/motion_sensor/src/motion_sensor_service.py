@@ -15,7 +15,7 @@ GPIO.setup(SENSOR_PIN, GPIO.IN)
 def ping_sensor_for_motion():
 	i = GPIO.input(SENSOR_PIN)
 	# is_motion = (i!=0)
-	logging.info("Ping for motion: " + i)
+	logging.info("Ping for motion: " + str(i))
 	return jsonify({'motion': i}), 201
 
 
